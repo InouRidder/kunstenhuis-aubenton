@@ -132,6 +132,11 @@ export const fr: Dict = {
     mealsTitle: 'À manger & à boire',
     mealsText:
       'Le Kunstenhuis Aubenton prend en charge tous les repas — et là aussi, place à la créativité !',
+    coordTitle: 'Ateliers & coordination',
+    coordIntro: 'Pour des ateliers spécifiques et un accompagnement, vous pouvez contacter directement nos coordinateurs.',
+    coord: {
+      danceMovement: 'Coordination danse et mouvement',
+    },
     discTease: 'Voir',
     disciplines: {
       dance: { name: 'Danse', desc: 'Mouvement et expression au studio ou sur scène.' },

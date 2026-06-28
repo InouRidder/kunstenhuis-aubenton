@@ -75,6 +75,12 @@ export const disciplines: { id: string; icon: string }[] = [
   { id: 'writing', icon: 'pen' },
 ];
 
+// ── Workshop coordinators (Mogelijkheden page) ─────────────────────────────
+// `area` is a key into i18n possibilities.coord. Add more lines here as they come.
+export const coordinators: { area: string; email: string }[] = [
+  { area: 'danceMovement', email: 'sophieilona@kunstenhuisaubenton.nl' },
+];
+
 // ── Agenda 2026 ────────────────────────────────────────────────────────────
 export const agendaYear = 2026;
 export const agendaItems: {

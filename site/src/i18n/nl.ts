@@ -130,6 +130,11 @@ export const nl = {
     mealsTitle: 'Eten & drinken',
     mealsText:
       'Kunstenhuis Aubenton verzorgt alle maaltijden — en ook op dat vlak is veel creatiefs mogelijk!',
+    coordTitle: 'Workshops & coördinatie',
+    coordIntro: 'Voor specifieke workshops en begeleiding kun je rechtstreeks terecht bij onze coördinatoren.',
+    coord: {
+      danceMovement: 'Coördinatie dans en beweging',
+    } as Record<string, string>,
     discTease: 'Bekijk',
     disciplines: {
       dance: { name: 'Dans', desc: 'Beweging en expressie in de studio of op het podium.' },

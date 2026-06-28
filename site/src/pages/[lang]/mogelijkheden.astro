@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import { langPaths } from '../../i18n/paths';
 import { useTranslations, localizedPath } from '../../i18n';
-import { disciplines, type Locale } from '../../data';
+import { disciplines, coordinators, type Locale } from '../../data';
 export const getStaticPaths = langPaths;
 
 interface Props { locale: Locale }
@@ -61,6 +61,27 @@ type DiscKey = keyof typeof t.possibilities.disciplines;
       <div class="center reveal" style="margin-top:2.5rem">
         <a class="btn" href={localizedPath(locale, 'contact')}>{t.common.getInTouch}<Icon name="arrow" size={16} class="arrow" /></a>
       </div>
+    </div>
+  </section>
+
+  <!-- WORKSHOPS & COORDINATION -->
+  <section class="section">
+    <div class="wrap" style="max-width:760px">
+      <div class="reveal" style="text-align:center;margin-bottom:2rem">
+        <span class="eyebrow">{t.nav.possibilities}</span>
+        <h2 style="margin-top:.4rem">{t.possibilities.coordTitle}</h2>
+        <p class="lead" style="margin-top:.6rem">{t.possibilities.coordIntro}</p>
+      </div>
+      <ul class="coord-list reveal">
+        {coordinators.map((c) => (
+          <li class="coord-item">
+            <span class="coord-area">{t.possibilities.coord[c.area]}</span>
+            <a class="coord-mail" href={`mailto:${c.email}`}>
+              <Icon name="mail" size={16} /> {c.email}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
