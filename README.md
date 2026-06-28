@@ -1,8 +1,11 @@
 # Kunstenhuis Aubenton — website
 
+**🌐 Live: https://inouridder.github.io/kunstenhuis-aubenton/**
+
 A fast, fully static, three-language (🇳🇱 NL · 🇬🇧 EN · 🇫🇷 FR) website for
 Kunstenhuis Aubenton, built with [Astro](https://astro.build). It builds to plain
-HTML/CSS and is designed to be hosted for free on **GitHub Pages**.
+HTML/CSS and is hosted for free on **GitHub Pages** (deployed automatically on
+every push to `main` via GitHub Actions).
 
 The site is generated into real localized pages — e.g. `/nl/het-huis/`,
 `/en/the-house/`… well, `/en/het-huis/` (the slugs are kept identical across
@@ -48,13 +51,20 @@ Other commands: `npm run build` (output to `site/dist/`), `npm run preview`
 
 ### Domain
 
-`site/public/CNAME` currently contains `www.kunstenhuisaubenton.nl`.
+The site is currently published as a **project page** at
+`https://inouridder.github.io/kunstenhuis-aubenton/`. Accordingly
+`site/astro.config.mjs` sets `site: 'https://inouridder.github.io'` and
+`base: '/kunstenhuis-aubenton/'`, and the custom-domain file is parked at
+`site/public/CNAME.disabled`.
 
-- **Using that custom domain?** Keep the file and point the domain's DNS at
-  GitHub Pages (a `CNAME` record for `www` → `<user>.github.io`).
-- **Using a `…github.io/Aubenton/` project URL instead?** Delete
-  `site/public/CNAME`, then in `site/astro.config.mjs` set
-  `site: 'https://<user>.github.io'` and uncomment `base: '/Aubenton/'`.
+**To switch to the custom domain `www.kunstenhuisaubenton.nl` later:**
+
+1. In `site/astro.config.mjs`: set `site: 'https://www.kunstenhuisaubenton.nl'`
+   and remove the `base: '/kunstenhuis-aubenton/'` line.
+2. Rename `site/public/CNAME.disabled` → `site/public/CNAME`.
+3. Point the domain's DNS at GitHub Pages (a `CNAME` record for `www` →
+   `inouridder.github.io`) and set the custom domain under **Settings → Pages**.
+4. Push — the site rebuilds and serves from the domain root.
 
 ## How to update content (no coding background needed)
 
