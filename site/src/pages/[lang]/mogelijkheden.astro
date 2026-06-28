@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { langPaths } from '../../i18n/paths';
+import { useTranslations, localizedPath } from '../../i18n';
+import { disciplines, type Locale } from '../../data';
+export const getStaticPaths = langPaths;
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+type DiscKey = keyof typeof t.possibilities.disciplines;
+---
+<Base locale={locale} current="possibilities" title={t.possibilities.title} description={t.possibilities.lead}>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">{t.nav.possibilities}</span>
+      <h1>{t.possibilities.title}</h1>
+      <p class="lead">{t.possibilities.lead}</p>
+    </div>
+  </header>
+
+  <!-- DISCIPLINE TILES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="center reveal" style="margin-bottom:2.2rem">
+        <span class="eyebrow">{t.possibilities.disciplinesTitle}</span>
+      </div>
+      <div class="tiles reveal">
+        {disciplines.map((d) => {
+          const info = t.possibilities.disciplines[d.id as DiscKey];
+          return (
+            <a class="tile" href={`#${d.id}`}>
+              <Icon name={d.icon} size={34} class="ic" />
+              <span class="t-name">{info.name}</span>
+              <span class="t-desc">{info.desc}</span>
+              <span class="t-more">{t.possibilities.discTease}<Icon name="arrow" size={13} /></span>
+            </a>
+          );
+        })}
+      </div>
+      <p class="center reveal" style="font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--bordeaux);margin-top:2.5rem">
+        {t.possibilities.combine}
+      </p>
+    </div>
+  </section>
+
+  <!-- TRAINERS + MEALS -->
+  <section class="section section--cream">
+    <div class="wrap">
+      <div class="grid grid-2 reveal">
+        <div class="card">
+          <h3>{t.possibilities.trainersTitle}</h3>
+          <p class="prose" style="margin-top:.6rem">{t.possibilities.trainersText}</p>
+        </div>
+        <div class="card">
+          <h3>{t.possibilities.mealsTitle}</h3>
+          <p class="prose" style="margin-top:.6rem">{t.possibilities.mealsText}</p>
+        </div>
+      </div>
+      <div class="center reveal" style="margin-top:2.5rem">
+        <a class="btn" href={localizedPath(locale, 'contact')}>{t.common.getInTouch}<Icon name="arrow" size={16} class="arrow" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCIPLINE DETAIL ANCHORS (room to expand later) -->
+  <section class="section section--paper">
+    <div class="wrap" style="max-width:820px">
+      {disciplines.map((d, i) => {
+        const info = t.possibilities.disciplines[d.id as DiscKey];
+        return (
+          <div id={d.id} class="reveal" style={`padding:2rem 0;${i ? 'border-top:1px solid var(--line)' : ''};scroll-margin-top:90px`}>
+            <div style="display:flex;gap:1.2rem;align-items:center">
+              <span style="color:var(--gold-deep)"><Icon name={d.icon} size={32} /></span>
+              <h3 style="margin:0">{info.name}</h3>
+            </div>
+            <p class="prose" style="margin-top:.8rem">{info.desc}</p>
+            <p style="color:var(--stone);font-size:.85rem;font-style:italic;margin-top:.4rem">{t.common.moreInfoSoon}</p>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</Base>

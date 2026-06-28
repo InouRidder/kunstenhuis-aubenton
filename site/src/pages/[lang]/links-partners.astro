@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { langPaths } from '../../i18n/paths';
+import { useTranslations } from '../../i18n';
+import { partners, type Locale } from '../../data';
+export const getStaticPaths = langPaths;
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+<Base locale={locale} current="partners" title={t.partners.title} description={t.partners.lead}>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">{t.nav.partners}</span>
+      <h1>{t.partners.title}</h1>
+      <p class="lead">{t.partners.lead}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap" style="max-width:840px">
+      <div class="grid grid-2 reveal">
+        {partners.map((p) => (
+          <div class="partner">
+            <span class="badge">{p.name.charAt(0)}</span>
+            <div>
+              <h3>{p.name}</h3>
+              {p.descKey && <p class="prose" style="font-size:.92rem">{t.partners.desc[p.descKey]}</p>}
+              {p.url && (
+                <a class="link-arrow" style="margin-top:.7rem" href={p.url} target="_blank" rel="noopener">
+                  {t.partners.visit}<Icon name="arrow" size={14} class="arrow" />
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="center lead reveal" style="margin-top:2.5rem">{t.partners.more}</p>
+    </div>
+  </section>
+</Base>

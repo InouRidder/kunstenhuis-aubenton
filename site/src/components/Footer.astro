@@ -1,0 +1,51 @@
+---
+import { navOrder, org, type Locale, type NavKey } from '../data';
+import { useTranslations, localizedPath } from '../i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const year = 2026;
+const items = navOrder.filter((k): k is NavKey => k !== 'home');
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Kunstenhuis Aubenton</h4>
+        <p class="footer-contact" style="opacity:.85">{t.footer.tagline}</p>
+        <p class="footer-contact" style="margin-top:1rem">
+          <em>{t.meta.tagline}</em>
+        </p>
+      </div>
+
+      <div>
+        <p class="f-sub">{t.footer.nav}</p>
+        <ul class="footer-links">
+          {items.map((k) => (
+            <li><a href={localizedPath(locale, k)}>{t.nav[k]}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p class="f-sub">{t.footer.contact}</p>
+        <address class="footer-contact" style="font-style:normal">
+          {org.name}<br />
+          {org.street} · {org.postal}<br />
+          <a href={`tel:${org.phoneHref}`}>{org.phone}</a><br />
+          <a href={`mailto:${org.email}`}>{org.email}</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {year} {t.footer.legal}. {t.footer.rights}</span>
+      <span class="meta">
+        <span>KvK: {org.coc}</span>
+        <span>BTW: {org.vat}</span>
+        <span>IBAN: {org.iban}</span>
+      </span>
+    </div>
+  </div>
+</footer>

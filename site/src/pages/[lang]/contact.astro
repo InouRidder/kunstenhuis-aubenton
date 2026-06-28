@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { langPaths } from '../../i18n/paths';
+import { useTranslations } from '../../i18n';
+import { org, type Locale } from '../../data';
+export const getStaticPaths = langPaths;
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+<Base locale={locale} current="contact" title={t.contact.title} description={t.contact.lead}>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">{t.nav.contact}</span>
+      <h1>{t.contact.title}</h1>
+      <p class="lead">{t.contact.lead}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <!-- FORM -->
+        <form id="contactForm" data-email={org.email}>
+          <p style="margin-bottom:1.4rem">
+            <a class="link-arrow" href={`mailto:${org.email}`}><Icon name="mail" size={16} /> {org.email}</a>
+          </p>
+          <div class="field">
+            <label for="cf-name">{t.contact.formName}</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" placeholder={t.contact.phName} required />
+          </div>
+          <div class="field">
+            <label for="cf-email">{t.contact.formEmail}</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" placeholder={t.contact.phEmail} required />
+          </div>
+          <div class="field">
+            <label for="cf-subject">{t.contact.formSubject}</label>
+            <input id="cf-subject" name="subject" type="text" placeholder={t.contact.phSubject} />
+          </div>
+          <div class="field">
+            <label for="cf-message">{t.contact.formMessage}</label>
+            <textarea id="cf-message" name="message" placeholder={t.contact.phMessage} required></textarea>
+          </div>
+          <button class="btn" type="submit">{t.contact.formSend}<Icon name="arrow" size={16} class="arrow" /></button>
+          <p style="font-size:.78rem;color:var(--stone);margin-top:.9rem">{t.contact.formNote}</p>
+        </form>
+
+        <!-- DETAILS -->
+        <aside class="contact-card">
+          <h3 style="margin-bottom:.4rem">{t.contact.detailsTitle}</h3>
+          <div class="contact-block">
+            <div class="label">{t.contact.addressTitle}</div>
+            <div class="val">{org.name}<br />{org.street}<br />{org.postal}</div>
+          </div>
+          <div class="contact-block">
+            <div class="label">{t.contact.callTitle}</div>
+            <div class="val"><a href={`tel:${org.phoneHref}`}>{org.phone}</a></div>
+          </div>
+          <div class="contact-block">
+            <div class="label">{t.contact.mailTitle}</div>
+            <div class="val"><a href={`mailto:${org.email}`}>{org.email}</a></div>
+          </div>
+          <div class="contact-block">
+            <div class="label">{t.contact.adminTitle}</div>
+            <div class="val">
+              {t.contact.iban}: {org.iban}<br />
+              {t.contact.vat}: {org.vat}<br />
+              {t.contact.coc}: {org.coc}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement | null;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = form.dataset.email || '';
+    const data = new FormData(form);
+    const subject = (data.get('subject') as string) || 'Kunstenhuis Aubenton';
+    const body =
+      `${data.get('name') || ''}\n${data.get('email') || ''}\n\n${data.get('message') || ''}`;
+    window.location.href =
+      `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>

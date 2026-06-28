@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { langPaths } from '../../i18n/paths';
+import { useTranslations, localizedPath, shortDate } from '../../i18n';
+import { agendaItems, type Locale } from '../../data';
+export const getStaticPaths = langPaths;
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const base = import.meta.env.BASE_URL;
+const img = (n: string) => `${base}images/${n}.jpg`;
+const upcoming = agendaItems.slice(0, 3);
+---
+<Base locale={locale} current="home" title={t.nav.home} description={t.home.heroIntro}>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"><img src={img('pand-pleintje')} alt="" fetchpriority="high" /></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <h1 class="sr-only">{t.meta.siteName} — {t.home.heroTagline}</h1>
+        <img class="hero-logo" src={`${base}images/logo-full.jpg`} alt="Kunstenhuis Aubenton" width="440" />
+        <p class="hero-tagline">{t.home.heroTagline}</p>
+        <p class="hero-intro">{t.home.heroIntro}</p>
+        <div class="btn-row">
+          <a class="btn" href={localizedPath(locale, 'house')}>{t.home.ctaHouse}<Icon name="arrow" size={16} class="arrow" /></a>
+          <a class="btn btn--ghost" href={localizedPath(locale, 'possibilities')}>{t.home.ctaPossibilities}</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue"><span class="line"></span></div>
+  </section>
+
+  <!-- INTRO BLOCKS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-2" style="align-items:stretch">
+        <div class="split reveal">
+          <div class="split-media"><img src={img('theaterzaal-vloer')} alt={t.gallery.stageFloor} /><span class="frame"></span></div>
+          <div class="stack">
+            <span class="eyebrow">01</span>
+            <h2>{t.home.block1Title}</h2>
+            <p class="prose">{t.home.block1Text}</p>
+            <a class="link-arrow" href={localizedPath(locale, 'possibilities')}>{t.common.readMore}<Icon name="arrow" size={15} class="arrow" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="wrap">
+      <div class="split split--reverse reveal">
+        <div class="split-media"><img src={img('tuin')} alt={t.gallery.garden} /><span class="frame"></span></div>
+        <div class="stack">
+          <span class="eyebrow">02</span>
+          <h2>{t.home.block2Title}</h2>
+          <p class="prose">{t.home.block2Text}</p>
+          <a class="link-arrow" href={localizedPath(locale, 'about')}>{t.nav.about}<Icon name="arrow" size={15} class="arrow" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="section--tight section">
+    <div class="wrap reveal">
+      <div class="script-rule" style="margin-bottom:2.5rem"><span class="dot"></span></div>
+      <div class="stats">
+        {t.home.glance.map((g) => (
+          <div class="stat"><span class="k">{g.k}</span><span class="v">{g.v}</span></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA TEASER -->
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="center reveal" style="margin-bottom:2.5rem">
+        <span class="eyebrow">{t.nav.agenda}</span>
+        <h2 style="margin-top:.5rem">{t.home.agendaTeaser}</h2>
+      </div>
+      <ul class="agenda-list reveal" style="max-width:760px;margin-inline:auto">
+        {upcoming.map((it) => {
+          const sd = shortDate(locale, it.start);
+          return (
+            <li class="agenda-item">
+              <div class="agenda-date"><span class="d">{sd.day}</span><span class="m">{sd.month}</span></div>
+              <div class="agenda-body">
+                <div class="org">{it.org}</div>
+                <div class="ttl">{t.agenda.items[it.titleKey as keyof typeof t.agenda.items]}</div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      <div class="center reveal" style="margin-top:2.5rem">
+        <a class="btn btn--ghost" href={localizedPath(locale, 'agenda')}>{t.home.agendaTeaserCta}<Icon name="arrow" size={16} class="arrow" /></a>
+      </div>
+    </div>
+  </section>
+</Base>

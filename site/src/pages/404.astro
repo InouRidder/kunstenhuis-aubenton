@@ -1,0 +1,27 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 · Kunstenhuis Aubenton</title>
+    <link rel="icon" type="image/png" href={`${base}favicon.png`} />
+    <style>
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center;
+        font-family: 'Jost', system-ui, sans-serif; background: #f5efe4; color: #2c2420; padding: 2rem; }
+      h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(3rem, 12vw, 6rem); color: #6b1a2a; margin: 0; }
+      p { color: #8b7d74; letter-spacing: 0.04em; }
+      a { display: inline-block; margin-top: 1.5rem; background: #6b1a2a; color: #f5efe4; text-decoration: none;
+        padding: 0.9rem 1.6rem; border-radius: 3px; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>404</h1>
+      <p>Deze pagina bestaat niet · Page not found · Page introuvable</p>
+      <a href={`${base}nl/`}>Kunstenhuis Aubenton</a>
+    </div>
+  </body>
+</html>

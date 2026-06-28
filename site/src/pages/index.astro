@@ -1,0 +1,30 @@
+---
+// Root entry: redirect to the visitor's language (saved choice → browser → nl).
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kunstenhuis Aubenton</title>
+    <link rel="canonical" href={`${base}nl/`} />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${base}nl/`} />
+    <script is:inline define:vars={{ base }}>
+      (function () {
+        var supported = ['nl', 'en', 'fr'];
+        var saved = null;
+        try { saved = localStorage.getItem('kha-lang'); } catch (e) {}
+        var nav = (navigator.language || 'nl').slice(0, 2).toLowerCase();
+        var lang = supported.indexOf(saved) > -1 ? saved : (supported.indexOf(nav) > -1 ? nav : 'nl');
+        location.replace(base + lang + '/');
+      })();
+    </script>
+  </head>
+  <body>
+    <p style="font-family:Georgia,serif;color:#6B1A2A;padding:2rem">
+      Kunstenhuis Aubenton — <a href={`${base}nl/`}>ga verder / continue / continuer</a>
+    </p>
+  </body>
+</html>

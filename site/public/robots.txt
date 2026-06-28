@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://inouridder.github.io/kunstenhuis-aubenton/sitemap.xml

@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { locales, type Locale, type NavKey } from '../data';
+import { useTranslations, localizedPath } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  current: NavKey;
+  title: string;
+  description: string;
+}
+const { locale, current, title, description } = Astro.props;
+const t = useTranslations(locale);
+const fullTitle = current === 'home' ? `${t.meta.siteName} · ${t.meta.tagline}` : `${title} · ${t.meta.siteName}`;
+const ogImage = new URL(`${import.meta.env.BASE_URL}images/pand-pleintje.jpg`, Astro.site ?? Astro.url);
+const canonical = new URL(localizedPath(locale, current), Astro.site ?? Astro.url);
+---
+<!doctype html>
+<html lang={t.meta.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    {locales.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(localizedPath(l, current), Astro.site ?? Astro.url).href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(localizedPath('nl', current), Astro.site ?? Astro.url).href} />
+    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}favicon.png`} />
+    <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}favicon.png`} />
+    <meta name="theme-color" content="#6B1A2A" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={t.meta.siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage.href} />
+    <meta property="og:locale" content={`${locale}_${locale.toUpperCase()}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.meta.skipToContent}</a>
+    <Nav locale={locale} current={current} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+
+    <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookies">
+      <span>{t.cookie.text}</span>
+      <button class="cookie-accept" id="cookieOk">{t.cookie.accept}</button>
+    </div>
+
+    <script>
+      // Cookie notice (functional-only; remembers acknowledgement)
+      const KEY = 'kha-cookie-ok';
+      const banner = document.getElementById('cookie');
+      if (banner && !localStorage.getItem(KEY)) {
+        setTimeout(() => banner.classList.add('show'), 900);
+        document.getElementById('cookieOk')?.addEventListener('click', () => {
+          localStorage.setItem(KEY, '1');
+          banner.classList.remove('show');
+        });
+      }
+
+      // Remember language preference & gently steer the bare root visit.
+      const seg = location.pathname.split('/').filter(Boolean)[0];
+      if (['nl', 'en', 'fr'].includes(seg)) localStorage.setItem('kha-lang', seg);
+
+      // Reveal-on-scroll (with safe fallbacks so content is never stuck hidden)
+      const reveals = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        reveals.forEach((el) => el.classList.add('in'));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
+          { threshold: 0.05, rootMargin: '0px 0px -4% 0px' }
+        );
+        reveals.forEach((el) => io.observe(el));
+        // Safety net: if anything is still hidden a moment after load, show it.
+        window.addEventListener('load', () =>
+          setTimeout(() => reveals.forEach((el) => el.classList.add('in')), 2500)
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { langPaths } from '../../i18n/paths';
+import { useTranslations } from '../../i18n';
+import type { Locale } from '../../data';
+export const getStaticPaths = langPaths;
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const base = import.meta.env.BASE_URL;
+---
+<Base locale={locale} current="history" title={t.history.title} description={t.history.lead}>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">2006 — {2026}</span>
+      <h1>{t.history.title}</h1>
+      <p class="lead">{t.history.lead}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split reveal">
+        <div class="split-media"><img src={`${base}images/entree.jpg`} alt={t.gallery.entrance} /><span class="frame"></span></div>
+        <div class="prose stack">
+          <p>{t.history.paragraphs[0]}</p>
+          <p>{t.history.paragraphs[1]}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="wrap">
+      <div class="prose stack reveal" style="max-width:760px;margin-inline:auto">
+        <p>{t.history.paragraphs[2]}</p>
+        <p>{t.history.paragraphs[3]}</p>
+      </div>
+      <div class="center reveal" style="margin-top:2.5rem">
+        <!-- Replace with the iHTs logo when available; links to iHTs. -->
+        <a class="btn btn--ghost" href="https://www.ihts.nl" target="_blank" rel="noopener">
+          {t.history.ihtsLink}<Icon name="arrow" size={16} class="arrow" />
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

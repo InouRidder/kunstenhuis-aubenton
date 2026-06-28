@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { langPaths } from '../../i18n/paths';
+import { useTranslations, localizedPath } from '../../i18n';
+import { guestbook, type Locale } from '../../data';
+export const getStaticPaths = langPaths;
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+<Base locale={locale} current="guestbook" title={t.guestbook.title} description={t.guestbook.lead}>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">{t.nav.guestbook}</span>
+      <h1>{t.guestbook.title}</h1>
+      <p class="lead">{t.guestbook.lead}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      {guestbook.length === 0 ? (
+        <p class="lead center">{t.guestbook.empty}</p>
+      ) : (
+        <div class="quotes reveal">
+          {guestbook.map((e) => (
+            <figure class="quote">
+              <blockquote>{t.guestbook.entries[e.id] ?? ''}</blockquote>
+              <figcaption class="by">
+                <div class="g">{e.group}</div>
+                <div class="dt">{e.dates}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+
+      <div class="card center reveal" style="margin-top:3rem;background:var(--cream);border-color:var(--gold);max-width:640px;margin-inline:auto">
+        <p class="prose" style="margin-bottom:1.2rem">{t.guestbook.cta}</p>
+        <a class="btn btn--ghost" href={localizedPath(locale, 'contact')}>{t.common.getInTouch}<Icon name="arrow" size={16} class="arrow" /></a>
+      </div>
+    </div>
+  </section>
+</Base>
