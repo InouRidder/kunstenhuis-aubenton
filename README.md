@@ -1,6 +1,6 @@
 # Kunstenhuis Aubenton — website
 
-**🌐 Live: https://inouridder.github.io/kunstenhuis-aubenton/**
+**🌐 Live: https://www.kunstenhuisaubenton.nl**
 
 A fast, fully static, three-language (🇳🇱 NL · 🇬🇧 EN · 🇫🇷 FR) website for
 Kunstenhuis Aubenton, built with [Astro](https://astro.build). It builds to plain
@@ -51,20 +51,23 @@ Other commands: `npm run build` (output to `site/dist/`), `npm run preview`
 
 ### Domain
 
-The site is currently published as a **project page** at
-`https://inouridder.github.io/kunstenhuis-aubenton/`. Accordingly
-`site/astro.config.mjs` sets `site: 'https://inouridder.github.io'` and
-`base: '/kunstenhuis-aubenton/'`, and the custom-domain file is parked at
-`site/public/CNAME.disabled`.
+The site is served from the custom domain **`www.kunstenhuisaubenton.nl`**
+(root). `site/astro.config.mjs` sets `site: 'https://www.kunstenhuisaubenton.nl'`
+with no `base`, and `site/public/CNAME` holds the domain so GitHub Pages routes
+it.
 
-**To switch to the custom domain `www.kunstenhuisaubenton.nl` later:**
+**DNS (at the registrar, e.g. TransIP):**
 
-1. In `site/astro.config.mjs`: set `site: 'https://www.kunstenhuisaubenton.nl'`
-   and remove the `base: '/kunstenhuis-aubenton/'` line.
-2. Rename `site/public/CNAME.disabled` → `site/public/CNAME`.
-3. Point the domain's DNS at GitHub Pages (a `CNAME` record for `www` →
-   `inouridder.github.io`) and set the custom domain under **Settings → Pages**.
-4. Push — the site rebuilds and serves from the domain root.
+- `CNAME` `www` → `inouridder.github.io`
+- `A` `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `AAAA` `@` → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+
+(The bare domain redirects to `www`.) Leave the `MX`, `SPF` and `_dmarc` records
+untouched — those run the email.
+
+**To revert to the free `github.io` project URL:** set
+`site: 'https://inouridder.github.io'` and `base: '/kunstenhuis-aubenton/'` in
+`astro.config.mjs`, and remove `site/public/CNAME`.
 
 ## How to update content (no coding background needed)
 
