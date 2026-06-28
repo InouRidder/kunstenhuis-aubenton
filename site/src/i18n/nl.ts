@@ -17,6 +17,7 @@ export const nl = {
     guestbook: 'Gastenboek',
     partners: 'Links & Partners',
     contact: 'Contact',
+    privacy: 'Privacyverklaring',
     menu: 'Menu',
     close: 'Sluiten',
   },
@@ -208,6 +209,52 @@ export const nl = {
     studio: 'De kleine studio',
     garden: 'De tuin',
   } as Record<string, string>,
+
+  privacy: {
+    title: 'Privacyverklaring',
+    updated: 'Laatst bijgewerkt: juni 2026',
+    lead: 'Stichting Kunstenhuis Aubenton respecteert je privacy en gaat zorgvuldig om met persoonsgegevens. Deze verklaring legt uit welke gegevens wij verwerken en waarom.',
+    sections: [
+      {
+        h: 'Welke gegevens wij verwerken',
+        p: [
+          'Deze website is een statische website die zelf geen gegevens verzamelt. Wij ontvangen alleen gegevens wanneer je zelf contact met ons opneemt, bijvoorbeeld per e-mail of via het contactformulier. Het gaat dan om je naam, je e-mailadres en de inhoud van je bericht.',
+        ],
+      },
+      {
+        h: 'Het contactformulier',
+        p: [
+          'Het contactformulier op deze site verstuurt geen gegevens naar een server. Wanneer je op “verstuur” klikt, opent je eigen e-mailprogramma met je bericht, dat je daarna zelf naar ons verzendt. Wij gebruiken die gegevens uitsluitend om je bericht te beantwoorden en bewaren ze niet langer dan daarvoor nodig is.',
+        ],
+      },
+      {
+        h: 'Cookies en opslag',
+        p: [
+          'Wij gebruiken geen tracking-, analyse- of advertentiecookies. De website bewaart alleen een kleine, functionele voorkeur in je browser (local storage) om te onthouden dat je deze melding hebt gezien. Er worden geen gegevens met derden gedeeld.',
+        ],
+      },
+      {
+        h: 'Lettertypen',
+        p: [
+          'De lettertypen worden vanaf onze eigen website geladen (self-hosted). Hiervoor worden geen verzoeken naar externe partijen, zoals Google, gestuurd.',
+        ],
+      },
+      {
+        h: 'Hosting',
+        p: [
+          'Deze website wordt gehost via GitHub Pages (GitHub, Inc.). Om de site veilig te kunnen tonen, kan de hostingpartij technische gegevens verwerken, zoals je IP-adres en browsergegevens, in standaard serverlogs.',
+        ],
+      },
+      {
+        h: 'Jouw rechten',
+        p: [
+          'Je hebt het recht om je persoonsgegevens in te zien, te laten corrigeren of te laten verwijderen. Neem hiervoor contact met ons op via de onderstaande gegevens. Daarnaast kun je een klacht indienen bij de Autoriteit Persoonsgegevens.',
+        ],
+      },
+    ],
+    githubLabel: 'Privacybeleid van GitHub',
+    controllerTitle: 'Verwerkingsverantwoordelijke',
+  },
 
   footer: {
     contact: 'Contact',

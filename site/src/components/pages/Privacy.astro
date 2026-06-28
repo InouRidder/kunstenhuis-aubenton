@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { useTranslations } from '../../i18n';
+import { org, type Locale } from '../../data';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const GITHUB_PRIVACY = 'https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement';
+---
+<Base locale={locale} current="privacy" title={t.privacy.title} description={t.privacy.lead}>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">{org.name}</span>
+      <h1>{t.privacy.title}</h1>
+      <p class="lead">{t.privacy.lead}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap" style="max-width:760px">
+      <p style="font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:2rem">
+        {t.privacy.updated}
+      </p>
+
+      <div class="prose stack reveal">
+        {t.privacy.sections.map((s) => (
+          <div style="margin-bottom:1.8rem">
+            <h3 style="margin-bottom:.6rem">{s.h}</h3>
+            {s.p.map((para) => <p>{para}</p>)}
+            {s.h === t.privacy.sections[4].h && (
+              <p style="margin-top:.6rem">
+                <a class="link-arrow" href={GITHUB_PRIVACY} target="_blank" rel="noopener">
+                  {t.privacy.githubLabel}<Icon name="arrow" size={14} class="arrow" />
+                </a>
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <!-- Data controller -->
+      <div class="contact-card reveal" style="margin-top:1rem">
+        <h3 style="margin-bottom:.4rem">{t.privacy.controllerTitle}</h3>
+        <div class="contact-block">
+          <div class="val">{org.name}<br />{org.street}<br />{org.postal}</div>
+        </div>
+        <div class="contact-block">
+          <div class="label">{t.contact.mailTitle}</div>
+          <div class="val"><a href={`mailto:${org.email}`}>{org.email}</a></div>
+        </div>
+        <div class="contact-block">
+          <div class="label">{t.contact.callTitle}</div>
+          <div class="val"><a href={`tel:${org.phoneHref}`}>{org.phone}</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

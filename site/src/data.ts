@@ -14,7 +14,7 @@ export const localeNames: Record<Locale, string> = {
   fr: 'Français',
 };
 
-// Site-wide pages, in nav order. `key` maps to a label in the i18n dictionary.
+// Every page key. Order = main-nav order; `privacy` lives in the footer only.
 export const navOrder = [
   'home',
   'about',
@@ -25,10 +25,12 @@ export const navOrder = [
   'guestbook',
   'partners',
   'contact',
+  'privacy',
 ] as const;
 export type NavKey = (typeof navOrder)[number];
 
-// slug per page (same across languages, prefixed by /<lang>/)
+// slug per page. NL (default locale) is served at the root with no prefix;
+// EN/FR are prefixed (/en/<slug>/, /fr/<slug>/).
 export const slugs: Record<NavKey, string> = {
   home: '',
   about: 'over-ons',
@@ -39,6 +41,7 @@ export const slugs: Record<NavKey, string> = {
   guestbook: 'gastenboek',
   partners: 'links-partners',
   contact: 'contact',
+  privacy: 'privacy',
 };
 
 // ── The house: photo gallery ───────────────────────────────────────────────

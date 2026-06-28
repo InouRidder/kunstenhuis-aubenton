@@ -19,6 +19,7 @@ export const en: Dict = {
     guestbook: 'Guestbook',
     partners: 'Links & Partners',
     contact: 'Contact',
+    privacy: 'Privacy statement',
     menu: 'Menu',
     close: 'Close',
   },
@@ -209,6 +210,52 @@ export const en: Dict = {
     seating: 'Theatre hall — seats for the audience',
     studio: 'The small studio',
     garden: 'The garden',
+  },
+
+  privacy: {
+    title: 'Privacy statement',
+    updated: 'Last updated: June 2026',
+    lead: 'Stichting Kunstenhuis Aubenton respects your privacy and handles personal data with care. This statement explains what data we process and why.',
+    sections: [
+      {
+        h: 'What data we process',
+        p: [
+          'This is a static website that collects no data of its own. We only receive data when you contact us yourself — for example by email or via the contact form. That data is your name, your email address and the content of your message.',
+        ],
+      },
+      {
+        h: 'The contact form',
+        p: [
+          'The contact form on this site does not send any data to a server. When you click “send”, your own email program opens with your message, which you then send to us yourself. We use that data solely to answer your message and keep it no longer than necessary for that purpose.',
+        ],
+      },
+      {
+        h: 'Cookies and storage',
+        p: [
+          'We use no tracking, analytics or advertising cookies. The website only stores a small, functional preference in your browser (local storage) to remember that you have seen this notice. No data is shared with third parties.',
+        ],
+      },
+      {
+        h: 'Fonts',
+        p: [
+          'The fonts are served from our own website (self-hosted). No requests are made to external parties such as Google for them.',
+        ],
+      },
+      {
+        h: 'Hosting',
+        p: [
+          'This website is hosted on GitHub Pages (GitHub, Inc.). In order to deliver the site securely, the hosting provider may process technical data such as your IP address and browser information in standard server logs.',
+        ],
+      },
+      {
+        h: 'Your rights',
+        p: [
+          'You have the right to access, correct or have your personal data deleted. To do so, please contact us using the details below. You may also lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens).',
+        ],
+      },
+    ],
+    githubLabel: 'GitHub privacy statement',
+    controllerTitle: 'Data controller',
   },
 
   footer: {

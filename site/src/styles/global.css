@@ -1,8 +1,9 @@
 /* ============================================================
    Kunstenhuis Aubenton — global styles
    Palette & type carried over from the house's visual identity.
+   Fonts are self-hosted via @fontsource (imported in layouts/Base.astro),
+   so no requests are made to Google's servers.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap');
 
 :root {
   --bordeaux: #6b1a2a;

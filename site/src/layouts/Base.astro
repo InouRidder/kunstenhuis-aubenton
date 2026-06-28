@@ -1,4 +1,16 @@
 ---
+// Self-hosted fonts (no third-party requests to Google) — privacy-friendly.
+import '@fontsource/cormorant-garamond/300.css';
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/libre-baskerville/400.css';
+import '@fontsource/libre-baskerville/400-italic.css';
+import '@fontsource/libre-baskerville/700.css';
+import '@fontsource/jost/300.css';
+import '@fontsource/jost/400.css';
+import '@fontsource/jost/500.css';
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -66,10 +78,6 @@ const canonical = new URL(localizedPath(locale, current), Astro.site ?? Astro.ur
           banner.classList.remove('show');
         });
       }
-
-      // Remember language preference & gently steer the bare root visit.
-      const seg = location.pathname.split('/').filter(Boolean)[0];
-      if (['nl', 'en', 'fr'].includes(seg)) localStorage.setItem('kha-lang', seg);
 
       // Reveal-on-scroll (with safe fallbacks so content is never stuck hidden)
       const reveals = document.querySelectorAll('.reveal');

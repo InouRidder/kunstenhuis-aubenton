@@ -5,7 +5,8 @@ import { useTranslations, localizedPath } from '../i18n';
 interface Props { locale: Locale; current: NavKey }
 const { locale, current } = Astro.props;
 const t = useTranslations(locale);
-const items = navOrder.filter((k) => k !== 'contact');
+// Contact is shown as the CTA button; Privacy lives in the footer only.
+const items = navOrder.filter((k) => k !== 'contact' && k !== 'privacy');
 ---
 <nav class="nav" id="nav" aria-label="Hoofdmenu">
   <a class="nav-logo" href={localizedPath(locale, 'home')} aria-label={t.meta.siteName}>

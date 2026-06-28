@@ -1,0 +1,44 @@
+---
+import { navOrder, slugs, locales, defaultLocale, type NavKey, type Locale } from '../data';
+import Home from '../components/pages/Home.astro';
+import About from '../components/pages/About.astro';
+import History from '../components/pages/History.astro';
+import Agenda from '../components/pages/Agenda.astro';
+import House from '../components/pages/House.astro';
+import Possibilities from '../components/pages/Possibilities.astro';
+import Guestbook from '../components/pages/Guestbook.astro';
+import Partners from '../components/pages/Partners.astro';
+import Contact from '../components/pages/Contact.astro';
+import Privacy from '../components/pages/Privacy.astro';
+
+const components: Record<NavKey, any> = {
+  home: Home,
+  about: About,
+  history: History,
+  agenda: Agenda,
+  house: House,
+  possibilities: Possibilities,
+  guestbook: Guestbook,
+  partners: Partners,
+  contact: Contact,
+  privacy: Privacy,
+};
+
+export function getStaticPaths() {
+  const out: { params: { path: string | undefined }; props: { locale: Locale; key: NavKey } }[] = [];
+  for (const locale of locales) {
+    for (const key of navOrder) {
+      const prefix = locale === defaultLocale ? '' : `${locale}/`;
+      const slug = slugs[key];
+      const path = `${prefix}${slug}`.replace(/\/$/, '');
+      out.push({ params: { path: path || undefined }, props: { locale, key } });
+    }
+  }
+  return out;
+}
+
+interface Props { locale: Locale; key: NavKey }
+const { locale, key } = Astro.props;
+const Page = components[key];
+---
+<Page locale={locale} />

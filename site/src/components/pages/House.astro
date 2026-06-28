@@ -1,9 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { langPaths } from '../../i18n/paths';
 import { useTranslations } from '../../i18n';
 import { galleryImages, type Locale } from '../../data';
-export const getStaticPaths = langPaths;
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;

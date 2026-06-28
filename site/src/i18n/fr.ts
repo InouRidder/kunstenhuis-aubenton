@@ -19,6 +19,7 @@ export const fr: Dict = {
     guestbook: 'Livre d’or',
     partners: 'Liens & Partenaires',
     contact: 'Contact',
+    privacy: 'Déclaration de confidentialité',
     menu: 'Menu',
     close: 'Fermer',
   },
@@ -209,6 +210,52 @@ export const fr: Dict = {
     seating: 'Salle de théâtre — sièges pour le public',
     studio: 'Le petit studio',
     garden: 'Le jardin',
+  },
+
+  privacy: {
+    title: 'Déclaration de confidentialité',
+    updated: 'Dernière mise à jour : juin 2026',
+    lead: 'La Stichting Kunstenhuis Aubenton respecte votre vie privée et traite les données personnelles avec soin. Cette déclaration explique quelles données nous traitons et pourquoi.',
+    sections: [
+      {
+        h: 'Quelles données nous traitons',
+        p: [
+          'Ce site est un site statique qui ne collecte aucune donnée par lui-même. Nous ne recevons des données que lorsque vous nous contactez vous-même — par exemple par e-mail ou via le formulaire de contact. Il s’agit alors de votre nom, de votre adresse e-mail et du contenu de votre message.',
+        ],
+      },
+      {
+        h: 'Le formulaire de contact',
+        p: [
+          'Le formulaire de contact de ce site n’envoie aucune donnée à un serveur. Lorsque vous cliquez sur « envoyer », votre propre logiciel de messagerie s’ouvre avec votre message, que vous nous envoyez ensuite vous-même. Nous utilisons ces données uniquement pour répondre à votre message et ne les conservons pas plus longtemps que nécessaire.',
+        ],
+      },
+      {
+        h: 'Cookies et stockage',
+        p: [
+          'Nous n’utilisons aucun cookie de suivi, d’analyse ou de publicité. Le site enregistre uniquement une petite préférence fonctionnelle dans votre navigateur (local storage) pour mémoriser que vous avez vu cet avis. Aucune donnée n’est partagée avec des tiers.',
+        ],
+      },
+      {
+        h: 'Polices de caractères',
+        p: [
+          'Les polices sont chargées depuis notre propre site (auto-hébergées). Aucune requête n’est envoyée à des tiers comme Google à cet effet.',
+        ],
+      },
+      {
+        h: 'Hébergement',
+        p: [
+          'Ce site est hébergé via GitHub Pages (GitHub, Inc.). Afin de diffuser le site en toute sécurité, l’hébergeur peut traiter des données techniques telles que votre adresse IP et des informations sur votre navigateur dans des journaux de serveur standard.',
+        ],
+      },
+      {
+        h: 'Vos droits',
+        p: [
+          'Vous avez le droit de consulter, de corriger ou de faire supprimer vos données personnelles. Pour cela, contactez-nous à l’aide des coordonnées ci-dessous. Vous pouvez également déposer une plainte auprès de l’autorité néerlandaise de protection des données (Autoriteit Persoonsgegevens).',
+        ],
+      },
+    ],
+    githubLabel: 'Politique de confidentialité de GitHub',
+    controllerTitle: 'Responsable du traitement',
   },
 
   footer: {

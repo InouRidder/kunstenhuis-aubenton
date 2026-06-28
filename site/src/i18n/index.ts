@@ -9,11 +9,13 @@ export function useTranslations(locale: Locale): Dict {
   return dictionaries[locale] ?? dictionaries[defaultLocale];
 }
 
-/** Build a localized, base-aware URL for a page key. */
+/** Build a localized, base-aware URL for a page key.
+ *  The default locale (nl) is served at the root with no language prefix. */
 export function localizedPath(locale: Locale, key: NavKey): string {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const slug = slugs[key];
-  return `${base}/${locale}/${slug ? slug + '/' : ''}`;
+  const prefix = locale === defaultLocale ? '' : `/${locale}`;
+  return `${base}${prefix}/${slug ? slug + '/' : ''}`;
 }
 
 /** Same page in another language (keeps current page key). */
