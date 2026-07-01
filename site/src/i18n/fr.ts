@@ -200,6 +200,7 @@ export const fr: Dict = {
     formNote: 'En cliquant sur envoyer, votre logiciel de messagerie s’ouvre avec votre message.',
     detailsTitle: 'Nos coordonnées',
     addressTitle: 'Adresse',
+    registeredTitle: 'Siège social de la fondation',
     callTitle: 'Téléphone',
     mailTitle: 'E-mail',
     adminTitle: 'Administration',

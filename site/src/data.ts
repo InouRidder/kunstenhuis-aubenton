@@ -133,8 +133,14 @@ export const guestbook: { id: string; group: string; dates: string }[] = [
 // ── Organisation / contact details (language-neutral) ───────────────────────
 export const org = {
   name: 'Stichting Kunstenhuis Aubenton',
-  street: 'Logger 191',
-  postal: '1186 RR Amstelveen',
+  // Visiting address (the house itself)
+  street: '3 Place de l’Église',
+  postal: '02500 Aubenton',
+  // Registered/statutory address of the foundation (shown small)
+  registered: {
+    street: 'Logger 191',
+    postal: '1186 RR Amstelveen',
+  },
   phone: '+31 6 20195247',
   phoneHref: '+31620195247',
   email: 'info@kunstenhuisaubenton.nl',

@@ -51,6 +51,7 @@ const t = useTranslations(locale);
           <div class="contact-block">
             <div class="label">{t.contact.addressTitle}</div>
             <div class="val">{org.name}<br />{org.street}<br />{org.postal}</div>
+            <div class="val-small">{t.contact.registeredTitle}: {org.registered.street}, {org.registered.postal}</div>
           </div>
           <div class="contact-block">
             <div class="label">{t.contact.callTitle}</div>

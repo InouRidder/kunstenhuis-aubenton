@@ -198,6 +198,7 @@ export const nl = {
     formNote: 'Door op versturen te klikken opent je eigen e-mailprogramma met je bericht.',
     detailsTitle: 'Onze gegevens',
     addressTitle: 'Adres',
+    registeredTitle: 'Vestigingsadres stichting',
     callTitle: 'Telefoon',
     mailTitle: 'E-mail',
     adminTitle: 'Administratie',

@@ -200,6 +200,7 @@ export const en: Dict = {
     formNote: 'Clicking send opens your own email program with your message.',
     detailsTitle: 'Our details',
     addressTitle: 'Address',
+    registeredTitle: 'Registered office of the foundation',
     callTitle: 'Phone',
     mailTitle: 'Email',
     adminTitle: 'Administration',
