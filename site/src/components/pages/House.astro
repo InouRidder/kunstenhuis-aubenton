@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { useTranslations } from '../../i18n';
-import { galleryImages, type Locale } from '../../data';
+import { galleryImages, houseFeatureImages, type Locale } from '../../data';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -34,11 +34,14 @@ const img = (n: string) => `${base}images/${n}.jpg`;
   <!-- FEATURES -->
   <section class="section section--cream">
     <div class="wrap">
-      <div class="grid grid-3 reveal">
-        {t.house.features.map((f) => (
-          <div class="card card--feature">
-            <h3>{f.t}</h3>
-            <p class="prose" style="font-size:.95rem">{f.d}</p>
+      <div class="grid grid-3 reveal" style="align-items:start">
+        {t.house.features.map((f, i) => (
+          <div class="card card--feature card--photo">
+            <img src={img(houseFeatureImages[i])} alt={f.t} loading="lazy" />
+            <div class="feature-body">
+              <h3>{f.t}</h3>
+              <p class="prose" style="font-size:.95rem;margin-top:.5rem">{f.d}</p>
+            </div>
           </div>
         ))}
       </div>

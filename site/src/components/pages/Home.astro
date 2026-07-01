@@ -33,15 +33,19 @@ const upcoming = agendaItems.slice(0, 3);
   <!-- INTRO BLOCKS -->
   <section class="section">
     <div class="wrap">
-      <div class="grid grid-2" style="align-items:stretch">
-        <div class="split reveal">
-          <div class="split-media"><img src={img('theaterzaal-vloer')} alt={t.gallery.stageFloor} /><span class="frame"></span></div>
-          <div class="stack">
-            <span class="eyebrow">01</span>
-            <h2>{t.home.block1Title}</h2>
-            <p class="prose">{t.home.block1Text}</p>
-            <a class="link-arrow" href={localizedPath(locale, 'possibilities')}>{t.common.readMore}<Icon name="arrow" size={15} class="arrow" /></a>
+      <div class="split reveal">
+        <div class="media-collage">
+          <figure class="mc-lead"><img src={img('theaterzaal-vloer')} alt={t.gallery.stageFloor} /></figure>
+          <div class="mc-followers">
+            <figure><img src={img('studio')} alt={t.gallery.studio} loading="lazy" /></figure>
+            <figure><img src={img('bar-1')} alt={t.gallery.bar} loading="lazy" /></figure>
           </div>
+        </div>
+        <div class="stack">
+          <span class="eyebrow">01</span>
+          <h2>{t.home.block1Title}</h2>
+          <p class="prose">{t.home.block1Text}</p>
+          <a class="link-arrow" href={localizedPath(locale, 'possibilities')}>{t.common.readMore}<Icon name="arrow" size={15} class="arrow" /></a>
         </div>
       </div>
     </div>
@@ -50,7 +54,12 @@ const upcoming = agendaItems.slice(0, 3);
   <section class="section section--cream">
     <div class="wrap">
       <div class="split split--reverse reveal">
-        <div class="split-media"><img src={img('tuin')} alt={t.gallery.garden} /><span class="frame"></span></div>
+        <div class="media-collage">
+          <figure class="mc-lead"><img src={img('binnenplaats-1')} alt={t.gallery.courtyard} /></figure>
+          <div class="mc-followers">
+            <figure><img src={img('tuin')} alt={t.gallery.garden} loading="lazy" /></figure>
+          </div>
+        </div>
         <div class="stack">
           <span class="eyebrow">02</span>
           <h2>{t.home.block2Title}</h2>
@@ -96,6 +105,11 @@ const upcoming = agendaItems.slice(0, 3);
       </ul>
       <div class="center reveal" style="margin-top:2.5rem">
         <a class="btn btn--ghost" href={localizedPath(locale, 'agenda')}>{t.home.agendaTeaserCta}<Icon name="arrow" size={16} class="arrow" /></a>
+      </div>
+
+      <div class="card reveal" style="margin:3rem auto 0;max-width:760px;background:var(--cream);border-color:var(--gold);text-align:center">
+        <p class="prose" style="margin:0 auto 1.2rem;max-width:60ch">{t.agenda.note}</p>
+        <a class="btn" href={localizedPath(locale, 'contact')}>{t.common.getInTouch}<Icon name="arrow" size={16} class="arrow" /></a>
       </div>
     </div>
   </section>

@@ -4,7 +4,7 @@ export const fr: Dict = {
   meta: {
     htmlLang: 'fr',
     siteName: 'Kunstenhuis Aubenton',
-    subtitle: 'Un foyer créatif · Ardennes',
+    subtitle: 'Un foyer créatif · Ardennes françaises',
     tagline: 'Découvrir, s’épanouir, se rencontrer',
     skipToContent: 'Aller au contenu',
   },
@@ -15,7 +15,7 @@ export const fr: Dict = {
     history: 'Histoire',
     agenda: 'Agenda',
     house: 'La maison',
-    possibilities: 'Possibilités',
+    possibilities: 'Réservations',
     guestbook: 'Livre d’or',
     partners: 'Liens & Partenaires',
     contact: 'Contact',
@@ -92,7 +92,7 @@ export const fr: Dict = {
   agenda: {
     title: 'Agenda',
     lead: 'Programme {year}',
-    note: 'Vous souhaitez utiliser la maison pour un projet, une répétition ou une exposition ? N’hésitez pas à nous contacter — bien plus est possible que ce qui figure au calendrier.',
+    note: 'Vous souhaitez utiliser la maison pour un projet, une répétition, un atelier ou une exposition ? N’hésitez pas à nous contacter — bien plus est possible que ce qui figure au calendrier.',
     residency: 'Résidence',
     items: {
       lyceum: 'Classe théâtre — résidence & présentation',
@@ -108,13 +108,14 @@ export const fr: Dict = {
     introText: [
       'Le Kunstenhuis Aubenton est une maison de caractère datant de 1636, rénovée principalement avec des matériaux trouvés dans la rue et offerts par des amis et des bienfaiteurs. Un lieu unique, paisible et, surtout, agréable.',
       'La maison peut accueillir jusqu’à 20 personnes pour la nuit. Ce nombre peut être étendu grâce à un hébergement voisin. La cour intérieure et le jardin invitent à la détente et à l’inspiration.',
+      'Le Kunstenhuis Aubenton dispose d’une salle de théâtre, d’un studio de danse et de plusieurs espaces communs où l’on peut travailler ensemble.',
     ],
     features: [
-      { t: 'Salle de théâtre', d: 'Une vraie salle avec gradins, scène et plateau pour travailler et jouer.' },
-      { t: 'Studio', d: 'Un studio lumineux pour la danse, la répétition, le yoga et le travail à petite échelle.' },
+      { t: 'Salle de théâtre', d: 'Une salle de théâtre chaleureuse avec gradins (40 places) et un plateau doté d’un éclairage professionnel et d’une régie technique à l’arrière. Le plancher de scène flottant en vinyle mesure 7,0 x 7,6 mètres.' },
+      { t: 'Studio', d: 'Un studio lumineux pour la danse, la répétition, le yoga et le travail à petite échelle. Le vaste sol en vinyle mesure 4,5 x 6,3 mètres. Le studio permet de raccorder diverses installations sonores, dispose d’un éclairage de scène professionnel et est équipé d’un mur de miroirs, d’un piano et d’une barre (2 mètres).' },
       { t: 'Bar & petite salle à manger', d: 'Un lieu chaleureux pour se réunir, manger et échanger.' },
       { t: 'Hébergement', d: 'Jusqu’à 20 couchages dans la maison, extensibles à proximité.' },
-      { t: 'Cour intérieure', d: 'Une cour abritée pour travailler et se rencontrer en plein air.' },
+      { t: 'Cour intérieure', d: 'Une cour abritée pour travailler ou se détendre en plein air, avec des tables de pique-nique et un brasero.' },
       { t: 'Jardin', d: 'Un jardin qui invite à la détente et à l’inspiration.' },
     ],
     galleryTitle: 'Impressions',
@@ -123,8 +124,11 @@ export const fr: Dict = {
   },
 
   possibilities: {
-    title: 'Possibilités',
-    lead: 'Le Kunstenhuis Aubenton est disponible pour donner ou suivre des cours artistiques, des rencontres, des retraites, des expositions, du team building — mais aussi pour des week-ends artistiques et actifs en famille ou entre amis.',
+    title: 'Réservations',
+    lead: 'Vous cherchez un espace pour réaliser un projet, une répétition, une résidence, un atelier ou une exposition ? Le Kunstenhuis Aubenton dispose d’une salle de théâtre, d’un studio de danse et de plusieurs espaces créatifs. Les groupes peuvent louer le Kunstenhuis Aubenton comme foyer créatif pour travailler à toutes sortes de projets, avec la possibilité de la pension complète.',
+    bookingContactPre: 'Contactez-nous ',
+    bookingContactLink: 'ici',
+    bookingContactPost: ' pour demander des informations et discuter des possibilités de réservation.',
     disciplinesTitle: 'Disciplines',
     combine: 'Et tout cela peut se combiner à l’infini !',
     trainersTitle: 'Avec ou sans encadrement',
@@ -132,11 +136,15 @@ export const fr: Dict = {
       'Les groupes peuvent travailler avec leur propre formateur ou accompagnateur. Mais le Kunstenhuis Aubenton dispose aussi d’un large réseau de formateurs et de coachs dans de nombreux domaines. Contactez-nous pour vos envies et les possibilités !',
     mealsTitle: 'À manger & à boire',
     mealsText:
-      'Le Kunstenhuis Aubenton prend en charge tous les repas — et là aussi, place à la créativité !',
+      'Le Kunstenhuis Aubenton prend en charge tous les repas — et là aussi, place à la créativité ! Nous adaptons volontiers l’offre aux souhaits du groupe, afin que les créateurs puissent se concentrer pleinement sur leurs projets. Nous tenons bien sûr compte des régimes et des allergies. Les visiteurs peuvent aussi choisir d’utiliser eux-mêmes la cuisine commune entièrement équipée.',
+    accommodationTitle: 'L’hébergement',
+    accommodationText:
+      'Au premier étage, le Kunstenhuis Aubenton propose des chambres communes et privées chaleureuses pour passer la nuit, avec des installations partagées. Des photos des chambres et des équipements complémentaires suivront.',
     coordTitle: 'Ateliers & coordination',
     coordIntro: 'Pour des ateliers spécifiques et un accompagnement, vous pouvez contacter directement nos coordinateurs.',
     coord: {
-      danceMovement: 'Coordination danse et mouvement',
+      danceMovement: 'Coordination des projets de danse et de mouvement',
+      music: 'Coordination des projets musicaux',
     },
     discTease: 'Voir',
     disciplines: {

@@ -61,6 +61,16 @@ export const galleryImages: { src: string; cap: string }[] = [
   { src: 'binnenplaats-3', cap: 'courtyard' },
 ];
 
+// ── The house: a photo for each feature card (aligned to i18n house.features order) ─
+export const houseFeatureImages = [
+  'theaterzaal-tribune', // Theaterzaal
+  'studio', // Studio
+  'bar-1', // Bar & eetzaaltje
+  'entree', // Logeren
+  'binnenplaats-1', // Binnenplaats
+  'tuin', // Tuin
+];
+
 // ── Possibilities: disciplines (clickable tiles) ───────────────────────────
 // `icon` is an inline SVG id defined in components/Icon.astro.
 export const disciplines: { id: string; icon: string }[] = [
@@ -78,10 +88,12 @@ export const disciplines: { id: string; icon: string }[] = [
   { id: 'writing', icon: 'pen' },
 ];
 
-// ── Workshop coordinators (Mogelijkheden page) ─────────────────────────────
-// `area` is a key into i18n possibilities.coord. Add more lines here as they come.
-export const coordinators: { area: string; email: string }[] = [
+// ── Workshop coordinators (Bookings page) ──────────────────────────────────
+// `area` is a key into i18n possibilities.coord. Give either an `email`
+// (rendered as a mailto link) or a `name`. Add more lines here as they come.
+export const coordinators: { area: string; email?: string; name?: string }[] = [
   { area: 'danceMovement', email: 'sophieilona@kunstenhuisaubenton.nl' },
+  { area: 'music', name: 'Willem van de Kar' },
 ];
 
 // ── Agenda 2026 ────────────────────────────────────────────────────────────

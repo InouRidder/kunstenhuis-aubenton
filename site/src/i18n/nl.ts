@@ -2,7 +2,7 @@ export const nl = {
   meta: {
     htmlLang: 'nl',
     siteName: 'Kunstenhuis Aubenton',
-    subtitle: 'Creatieve uitvalsbasis · Ardennen',
+    subtitle: 'Creatieve uitvalsbasis · Franse Ardennen',
     tagline: 'Ontdek, ontplooi, ontmoet',
     skipToContent: 'Naar de inhoud',
   },
@@ -13,7 +13,7 @@ export const nl = {
     history: 'Historie',
     agenda: 'Agenda',
     house: 'Het huis',
-    possibilities: 'Mogelijkheden',
+    possibilities: 'Boekingen',
     guestbook: 'Gastenboek',
     partners: 'Links & Partners',
     contact: 'Contact',
@@ -80,7 +80,7 @@ export const nl = {
     lead: 'Een rijke geschiedenis als vrije werkplek voor makers.',
     paragraphs: [
       'Vanaf 2006 bood Robert Ceelen met het Theaterhuis van de iHTs in Aubenton een vrije werkplek voor jonge en gevestigde makers. Het was een plek waar in alle rust kon worden onderzocht, gerepeteerd en gecreëerd. Het huis zelf was een bijzonder project: het is volledig opnieuw opgebouwd met hergebruikte materialen — gevonden op straat of geschonken door sympathisanten — en jarenlang vormgegeven door jongeren die er hun tijd, energie en vakmanschap in staken.',
-      'Met die aanpak bereikte iHTs haar oorspronkelijke doelstelling: een inspirerende, toegankelijke werkplek creëren waar nieuwe kunst kon ontstaan. Het Theaterhuis heeft in die jaren talloze makers verwelkomd en een blijvende indruk achtergelaten, op heel veel Nederlandse gasten én op Aubenton.',
+      'Met die aanpak bereikte de iHTs haar oorspronkelijke doelstelling: een inspirerende, toegankelijke werkplek creëren waar nieuwe kunst kon ontstaan. Het Theaterhuis heeft in die jaren talloze makers verwelkomd en een blijvende indruk achtergelaten, op heel veel Nederlandse gasten én op Aubenton.',
       'Op die rijke geschiedenis bouwen wij nu verder met Kunstenhuis Aubenton — een nieuw hoofdstuk voor het pand, met nieuwe mogelijkheden, maar met hetzelfde hart voor makers en kunst. We zijn maar eens begonnen met een nieuw dak.',
       'Robert Ceelen is met de iHTs ook een nieuw hoofdstuk begonnen, als fonds voor jonge makers. Informatie daarover — en een mooie terugblik op de iHTs in Aubenton — vind je bij iHTs.',
     ],
@@ -90,7 +90,7 @@ export const nl = {
   agenda: {
     title: 'Agenda',
     lead: 'Gepland programma {year}',
-    note: 'Wil je zelf het huis gebruiken voor een project, repetitie of expositie? Neem gerust contact op — er is meer mogelijk dan op de kalender staat.',
+    note: 'Wil je zelf het huis gebruiken voor een project, repetitie, workshop of expositie? Neem gerust contact op — er is meer mogelijk dan op de kalender staat.',
     residency: 'Residentie',
     items: {
       lyceum: 'Theaterklas — residentie & presentatie',
@@ -106,13 +106,14 @@ export const nl = {
     introText: [
       'Kunstenhuis Aubenton is een karaktervol pand uit 1636, verbouwd met voornamelijk materiaal gevonden op straat en geschonken door vrienden en begunstigers. Een unieke, rustige en bovenal fijne plek.',
       'In het pand kunnen tot 20 personen logeren. Dat aantal kan worden uitgebreid via een nabijgelegen logeeraccommodatie. De binnenplaats en de tuin nodigen uit tot verpozing en inspiratie.',
+      'Het Kunstenhuis Aubenton beschikt over een theaterzaal, dansstudio en verschillende gezamenlijke ruimtes waar kan worden samengewerkt.',
     ],
     features: [
-      { t: 'Theaterzaal', d: 'Een echte zaal met tribune, podium en vloer om op te werken en te spelen.' },
-      { t: 'Studio', d: 'Een lichte studio voor dans, repetitie, yoga en kleinschalig werk.' },
+      { t: 'Theaterzaal', d: 'Een sfeervolle theaterzaal met tribune (40 zitplaatsen) en podiumvloer met professionele lichtinstallatie en achtergelegen technische ruimte. De zwevende vinyl theatervloer is 7,0 x 7,6 meter.' },
+      { t: 'Studio', d: 'Een lichte studio voor dans, repetitie, yoga en kleinschalig werk. De ruime vinyl vloer is 4,5 x 6,3 meter. De studio biedt de mogelijkheid tot het aansluiten van diverse geluidsinstallaties, is voorzien van professionele podiumverlichting en beschikt over een spiegelwand, piano en barre (2 meter).' },
       { t: 'Bar & eetzaaltje', d: 'Een warme plek om samen te komen, te eten en na te praten.' },
       { t: 'Logeren', d: 'Tot 20 slaapplekken in huis, uit te breiden in de buurt.' },
-      { t: 'Binnenplaats', d: 'Een beschutte binnenplaats voor buiten werken en ontmoeten.' },
+      { t: 'Binnenplaats', d: 'Een beschutte binnenplaats om buiten te werken, of te ontspannen, met picknicktafels en vuurkorf.' },
       { t: 'Tuin', d: 'Een tuin die uitnodigt tot verpozing en inspiratie.' },
     ],
     galleryTitle: 'Sfeerimpressie',
@@ -121,8 +122,11 @@ export const nl = {
   },
 
   possibilities: {
-    title: 'Mogelijkheden',
-    lead: 'Kunstenhuis Aubenton is beschikbaar voor het geven of volgen van artistieke cursussen, bijeenkomsten, retraites, exposities, teambuilding, maar ook voor artistieke en actieve familie- of vriendenweekends.',
+    title: 'Boekingen',
+    lead: 'Ben je op zoek naar een ruimte voor de uitvoering van project, repetitie, residentie, workshop of expositie? Het Kunstenhuis Aubenton beschikt over een theaterzaal, dansstudio en verscheidene creatieve ruimtes. Gezelschappen kunnen het Kunstenhuis Aubenton huren als creatieve uitvalsbasis om te werken aan verscheidene creatieve projecten, met de mogelijkheid tot volpension.',
+    bookingContactPre: 'Neem ',
+    bookingContactLink: 'hier',
+    bookingContactPost: ' contact op voor het opvragen van informatie en om de boekingsmogelijkheden te bespreken.',
     disciplinesTitle: 'Disciplines',
     combine: 'En hiermee kan eindeloos gecombineerd worden!',
     trainersTitle: 'Met of zonder begeleiding',
@@ -130,11 +134,15 @@ export const nl = {
       'Gezelschappen kunnen met hun eigen trainer of begeleider aan het werk gaan. Maar Kunstenhuis Aubenton beschikt ook over een breed netwerk van trainers en coaches op allerlei vlak. Neem contact op over je wensen en de mogelijkheden!',
     mealsTitle: 'Eten & drinken',
     mealsText:
-      'Kunstenhuis Aubenton verzorgt alle maaltijden — en ook op dat vlak is veel creatiefs mogelijk!',
+      'Kunstenhuis Aubenton verzorgt alle maaltijden, ook op dat vlak is veel creatiefs mogelijk! Wij stemmen het aanbod graag af op de wensen van de groep zodat makers zich volledig kunnen focussen op hun creatieve projecten. Uiteraard houden we rekening met dieetwensen en allergieën. Bezoekers kunnen er ook voor kiezen om zelf gebruik te maken van de volledig uitgeruste gezamenlijke keuken.',
+    accommodationTitle: 'De accommodatie',
+    accommodationText:
+      'Kunstenhuis Aubenton herbergt op de eerste etage sfeervolle gezamenlijke en privéruimtes om in te overnachten met gedeelde faciliteiten. Foto’s van de ruimtes om in te overnachten met aanvullende voorzieningen volgen.',
     coordTitle: 'Workshops & coördinatie',
     coordIntro: 'Voor specifieke workshops en begeleiding kun je rechtstreeks terecht bij onze coördinatoren.',
     coord: {
-      danceMovement: 'Coördinatie dans en beweging',
+      danceMovement: 'Coördinatie projecten dans en beweging',
+      music: 'Coördinatie muziekprojecten',
     } as Record<string, string>,
     discTease: 'Bekijk',
     disciplines: {
