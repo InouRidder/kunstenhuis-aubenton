@@ -268,6 +268,7 @@ export const en: Dict = {
 
   footer: {
     contact: 'Contact',
+    follow: 'Follow us',
     tagline: 'A creative home base in the heart of the Ardennes.',
     rights: 'All rights reserved.',
     nav: 'Pages',

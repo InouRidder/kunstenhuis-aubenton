@@ -266,6 +266,7 @@ export const nl = {
 
   footer: {
     contact: 'Contact',
+    follow: 'Volg ons',
     tagline: 'Een creatieve uitvalsbasis in het hart van de Ardennen.',
     rights: 'Alle rechten voorbehouden.',
     nav: 'Pagina’s',

@@ -3,10 +3,18 @@ import { defineConfig } from 'astro/config';
 
 // Redirect the previous prefixed Dutch URLs (/nl/…) to the new root URLs,
 // since NL is now served without a language prefix.
-const nlPageSlugs = ['', 'over-ons', 'historie', 'agenda', 'het-huis', 'mogelijkheden', 'gastenboek', 'links-partners', 'contact'];
+const nlPageSlugs = ['', 'over-ons', 'historie', 'agenda', 'het-huis', 'boekingen', 'gastenboek', 'links-partners', 'contact'];
 const legacyNlRedirects = Object.fromEntries(
   nlPageSlugs.map((s) => [`/nl/${s ? s + '/' : ''}`, `/${s ? s + '/' : ''}`])
 );
+
+// The bookings page was renamed from /mogelijkheden/ to /boekingen/.
+const bookingSlugRedirects = {
+  '/mogelijkheden/': '/boekingen/',
+  '/en/mogelijkheden/': '/en/boekingen/',
+  '/fr/mogelijkheden/': '/fr/boekingen/',
+  '/nl/mogelijkheden/': '/boekingen/',
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,7 +30,7 @@ export default defineConfig({
     },
   },
 
-  redirects: legacyNlRedirects,
+  redirects: { ...legacyNlRedirects, ...bookingSlugRedirects },
 
   build: {
     inlineStylesheets: 'auto',

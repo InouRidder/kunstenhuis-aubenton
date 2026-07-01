@@ -1,6 +1,7 @@
 ---
 import { navOrder, org, type Locale, type NavKey } from '../data';
 import { useTranslations, localizedPath } from '../i18n';
+import Icon from './Icon.astro';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -36,6 +37,9 @@ const items = navOrder.filter((k): k is NavKey => k !== 'home');
           <a href={`tel:${org.phoneHref}`}>{org.phone}</a><br />
           <a href={`mailto:${org.email}`}>{org.email}</a>
         </address>
+        <a class="footer-ig" href={org.instagram} target="_blank" rel="noopener" aria-label={`${t.footer.follow} — Instagram`}>
+          <Icon name="instagram" size={18} /> {org.instagramHandle}
+        </a>
       </div>
     </div>
 

@@ -268,6 +268,7 @@ export const fr: Dict = {
 
   footer: {
     contact: 'Contact',
+    follow: 'Suivez-nous',
     tagline: 'Un foyer créatif au cœur des Ardennes.',
     rights: 'Tous droits réservés.',
     nav: 'Pages',

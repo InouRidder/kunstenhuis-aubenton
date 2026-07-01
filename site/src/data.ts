@@ -37,7 +37,7 @@ export const slugs: Record<NavKey, string> = {
   history: 'historie',
   agenda: 'agenda',
   house: 'het-huis',
-  possibilities: 'mogelijkheden',
+  possibilities: 'boekingen',
   guestbook: 'gastenboek',
   partners: 'links-partners',
   contact: 'contact',
@@ -141,4 +141,6 @@ export const org = {
   iban: 'NL88 TRIO 0321 2638 12',
   vat: 'NL8693.74.308.B01',
   coc: '42028151',
+  instagram: 'https://www.instagram.com/kunstenhuisaubenton',
+  instagramHandle: '@kunstenhuisaubenton',
 };
