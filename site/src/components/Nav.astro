@@ -24,34 +24,47 @@ const items = navOrder.filter((k) => k !== 'contact' && k !== 'privacy');
     </span>
   </a>
 
-  <div class="lang" role="group" aria-label="Taal / Language / Langue">
-    {locales.map((l) => (
-      <a href={localizedPath(l, current)} aria-current={l === locale ? 'true' : undefined} lang={l}>{l}</a>
-    ))}
-  </div>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label={t.nav.menu}>
+    <span></span><span></span><span></span>
+  </button>
 
-  <ul class="nav-links" id="navLinks">
-    {items.map((k) => (
+  <div class="nav-menu" id="navMenu">
+    <ul class="nav-links">
+      {items.map((k) => (
+        <li>
+          <a href={localizedPath(locale, k)} aria-current={current === k ? 'page' : undefined}>{t.nav[k]}</a>
+        </li>
+      ))}
       <li>
-        <a href={localizedPath(locale, k)} aria-current={current === k ? 'page' : undefined}>{t.nav[k]}</a>
+        <a class="nav-cta" href={localizedPath(locale, 'contact')} aria-current={current === 'contact' ? 'page' : undefined}>{t.nav.contact}</a>
       </li>
-    ))}
-    <li>
-      <a class="nav-cta" href={localizedPath(locale, 'contact')} aria-current={current === 'contact' ? 'page' : undefined}>{t.nav.contact}</a>
-    </li>
-  </ul>
+    </ul>
+    <div class="lang" role="group" aria-label="Taal / Language / Langue">
+      {locales.map((l) => (
+        <a href={localizedPath(l, current)} aria-current={l === locale ? 'true' : undefined} lang={l}>{l}</a>
+      ))}
+    </div>
+  </div>
 </nav>
 
 <script>
   const nav = document.getElementById('nav');
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+
+  const setOpen = (open: boolean) => {
+    toggle?.setAttribute('aria-expanded', String(open));
+    menu?.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle?.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  // Reset when switching to the desktop layout.
+  window.matchMedia('(min-width: 981px)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
+
   const onScroll = () => nav?.classList.toggle('scrolled', window.scrollY > 20);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
-
-  // On mobile, bring the current page into view within the horizontal strip.
-  const links = document.getElementById('navLinks');
-  const active = links?.querySelector('[aria-current="page"]') as HTMLElement | null;
-  if (links && active && links.scrollWidth > links.clientWidth) {
-    links.scrollLeft = active.offsetLeft - links.clientWidth / 2 + active.clientWidth / 2;
-  }
 </script>
