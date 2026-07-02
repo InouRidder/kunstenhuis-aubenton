@@ -121,6 +121,15 @@ export const en: Dict = {
     galleryTitle: 'Impressions',
     galleryNote: 'Hover over a photo to see the name of the space.',
     soon: 'We will soon add photos of the guest rooms as well.',
+    omgevingTitle: 'Aubenton and its surroundings',
+    omgevingSubtitle: 'Where authenticity and landscape meet',
+    omgevingText: [
+      'In the heart of the Thiérache lies Aubenton: a village where life still follows the calm rhythm of the French countryside. Here you will find no hurry, but the charm of a community that cherishes its traditions.',
+      'Aubenton has a real French baker with fresh bread and pastries every day, a cosy bar where villagers meet, a restaurant serving honest regional dishes and a small supermarket that offers exactly what you need.',
+      'The little river Ton winds through the village — a clear stream that shapes the valley and invites you to walk or take a canoe trip. The surroundings are typically Thiérache: rolling meadows, old hedgerows, half-timbered houses and woods that tell a new story every season.',
+      'Aubenton is a place where nature, history and village life come together. A place you do not just visit, but experience.',
+    ],
+    omgevingNote: 'Hover over a photo for the caption',
   },
 
   possibilities: {
@@ -219,6 +228,11 @@ export const en: Dict = {
     seating: 'Theatre hall — seats for the audience',
     studio: 'The small studio',
     garden: 'The garden',
+    eglise: 'Église Notre-Dame — the Kunstenhuis on the left',
+    tonWalk: 'Walking along the Ton',
+    tonBridge: 'From the bridge over the Ton',
+    bedroomView: 'View from the bedroom',
+    walkAround: 'Walking in the surroundings',
   },
 
   privacy: {

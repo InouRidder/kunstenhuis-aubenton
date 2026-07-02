@@ -121,6 +121,15 @@ export const fr: Dict = {
     galleryTitle: 'Impressions',
     galleryNote: 'Survolez une photo pour voir le nom de l’espace.',
     soon: 'Nous ajouterons bientôt aussi des photos des chambres d’hôtes.',
+    omgevingTitle: 'Aubenton et ses environs',
+    omgevingSubtitle: 'Là où l’authenticité et le paysage se rencontrent',
+    omgevingText: [
+      'Au cœur de la Thiérache se trouve Aubenton : un village où la vie suit encore le rythme paisible de la campagne française. Ici, pas de hâte, mais le charme d’une communauté qui chérit ses traditions.',
+      'Aubenton possède un véritable boulanger français avec du pain et des pâtisseries frais chaque jour, un bar convivial où les villageois se retrouvent, un restaurant proposant d’authentiques plats régionaux et une petite supérette qui offre exactement ce dont vous avez besoin.',
+      'La petite rivière le Ton serpente à travers le village — un ruisseau limpide qui façonne la vallée et invite à la promenade ou à une sortie en canoë. Les environs sont typiques de la Thiérache : prairies vallonnées, vieilles haies, maisons à colombages et forêts qui racontent une nouvelle histoire à chaque saison.',
+      'Aubenton est un lieu où la nature, l’histoire et la vie de village se rejoignent. Un lieu que l’on ne visite pas seulement, mais que l’on vit.',
+    ],
+    omgevingNote: 'Survolez une photo pour la légende',
   },
 
   possibilities: {
@@ -219,6 +228,11 @@ export const fr: Dict = {
     seating: 'Salle de théâtre — sièges pour le public',
     studio: 'Le petit studio',
     garden: 'Le jardin',
+    eglise: 'Église Notre-Dame — le Kunstenhuis à gauche',
+    tonWalk: 'Promenade le long du Ton',
+    tonBridge: 'Depuis le pont sur le Ton',
+    bedroomView: 'Vue depuis la chambre',
+    walkAround: 'Randonnée dans les environs',
   },
 
   privacy: {

@@ -61,6 +61,16 @@ export const galleryImages: { src: string; cap: string }[] = [
   { src: 'binnenplaats-3', cap: 'courtyard' },
 ];
 
+// ── The house: "Aubenton and its surroundings" gallery ─────────────────────
+// `cap` is a key into i18n gallery captions.
+export const omgevingImages: { src: string; cap: string }[] = [
+  { src: 'omgeving-eglise', cap: 'eglise' },
+  { src: 'omgeving-ton-wandelen', cap: 'tonWalk' },
+  { src: 'omgeving-brug-ton', cap: 'tonBridge' },
+  { src: 'omgeving-uitzicht', cap: 'bedroomView' },
+  { src: 'omgeving-wandelen', cap: 'walkAround' },
+];
+
 // ── The house: a photo for each feature card (aligned to i18n house.features order) ─
 export const houseFeatureImages = [
   'theaterzaal-tribune', // Theaterzaal

@@ -119,6 +119,15 @@ export const nl = {
     galleryTitle: 'Sfeerimpressie',
     galleryNote: 'Beweeg over een foto voor de naam van de ruimte.',
     soon: 'Binnenkort voegen we ook foto’s van de logeerkamers toe.',
+    omgevingTitle: 'Aubenton en de omgeving',
+    omgevingSubtitle: 'Waar authenticiteit en landschap samenkomen',
+    omgevingText: [
+      'In het hart van de Thiérache ligt Aubenton: een dorp waar het leven nog de rustige cadans volgt van het Franse platteland. Hier vind je geen haast, maar de charme van een gemeenschap die haar tradities koestert.',
+      'Aubenton heeft een echte Franse bakker met dagelijks vers brood en patisserie, een gezellige bar waar dorpsbewoners elkaar ontmoeten, een restaurant met eerlijke streekgerechten en een supermarktje dat precies biedt wat je nodig hebt.',
+      'Door het dorp slingert het riviertje de Ton, een helder stroompje dat de vallei vormgeeft en uitnodigt tot wandelen of een kanotocht. De omgeving is typisch Thiérache: glooiende weiden, oude hagen, vakwerkhuizen en bossen die elk seizoen een nieuw verhaal vertellen.',
+      'Aubenton is een plek waar natuur, geschiedenis en dorpsleven samenkomen. Een plek die je niet alleen bezoekt, maar beleeft.',
+    ],
+    omgevingNote: 'Beweeg over een foto voor de toelichting',
   },
 
   possibilities: {
@@ -217,6 +226,11 @@ export const nl = {
     seating: 'Theaterzaal — stoelen voor publiek',
     studio: 'De kleine studio',
     garden: 'De tuin',
+    eglise: 'Église Notre-Dame — links het Kunstenhuis',
+    tonWalk: 'Wandelen langs de Ton',
+    tonBridge: 'Vanaf de brug over de Ton',
+    bedroomView: 'Uitzicht vanuit de slaapkamer',
+    walkAround: 'Wandelen in de omgeving',
   } as Record<string, string>,
 
   privacy: {
